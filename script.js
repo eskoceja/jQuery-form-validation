@@ -21,6 +21,11 @@ $(document).ready(function () {
           .html("Please Fill Out Required Fields")
           .addClass("warning");
         $("label").eq(i).addClass("warning");
+
+        $("input").eq(i).on("change", function() {
+            $("label").eq(i).removeClass("warning");
+        })
+
       } else {
         $("#message").html("").removeClass("warning");
         $("label").eq(i).removeClass("warning");
